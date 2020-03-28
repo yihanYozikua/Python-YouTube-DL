@@ -1,6 +1,9 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 import ssl
+import shutil
 from pytube import YouTube
+from pytube import Playlist
 from moviepy.editor import *
 from pytube.__main__ import YouTube
 
@@ -17,8 +20,12 @@ with open('downloadList.txt') as file:
         yt = YouTube(line.rstrip())
         print(f"Downloading: {yt.title}")
         yt.streams.first().download()
+        print(f"Converting {yt.title}.mp4 into .mp3")
         video = VideoFileClip(f"{yt.title}.mp4")
         video.audio.write_audiofile(f"{yt.title}.mp3")
+        # move .mp3 & .mp4 into each directories
+        shutil.move(f"/Users/xiaoyihan/Code/PythonYouTubeDL/{yt.title}.mp4", f"/Users/xiaoyihan/Code/PythonYouTubeDL/Download-mp4/{yt.title}.mp4")
+        shutil.move(f"/Users/xiaoyihan/Code/PythonYouTubeDL/{yt.title}.mp3", f"/Users/xiaoyihan/Code/PythonYouTubeDL/Download-mp3/{yt.title}.mp3")
         print(f"video {yt.title} finish download")
 
 #rl = 'https://www.youtube.com/watch?v=6BR-DU4SWek'
@@ -32,4 +39,3 @@ with open('downloadList.txt') as file:
 
 #video = VideoFileClip('Nina Nesbitt - The Best You Had (Official Audio).mp4')
 #video.audio.write_audiofile('test.mp3')
-
