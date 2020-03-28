@@ -32,10 +32,3 @@ with open('downloadList.txt') as file:
 #yt = YouTube(url, on_progress_callback=progress)
 #video = yt.streams.first()
 #video.download()
-
-#url='https://www.youtube.com/watch?v=6BR-DU4SWek'
-#url='https://www.youtube.com/watch?v=OPlJlPXDZJc&feature=youtu.be&t=2390'
-#YouTube(url).streams.first().download()
-
-#video = VideoFileClip('Nina Nesbitt - The Best You Had (Official Audio).mp4')
-#video.audio.write_audiofile('test.mp3')
