@@ -11,11 +11,11 @@ moviepy
 
 ## Folders
 
-/Download-mp4
+## /Download-mp4
 影片載下來以後，會自動放到這裡
 
-/Download-mp3
+### /Download-mp3
 影片載下來以後，會自動轉成mp3格式並存放到這裡
 
-/Download-PlayList
+### /Download-PlayList
 如果是播放清單，整個清單會存在這裡
